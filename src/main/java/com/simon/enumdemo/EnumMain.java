@@ -42,6 +42,9 @@ public class EnumMain {
         //通过传入的sexCode使用switch
         testSexEnumSwitch("women");
 
+        //枚举单例的使用
+        Singleton.INSTALL.yourMethod();
+
     }
 
     /**

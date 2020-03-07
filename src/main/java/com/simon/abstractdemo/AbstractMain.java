@@ -7,12 +7,31 @@ package com.simon.abstractdemo;
 public class AbstractMain {
 
     public static void main(String[] args){
-        AbstractPeople[] peopleArr = new AbstractPeople[2];
-        //Student、Teacher都继承自People类，所以都可以直接放入People数组（这里就是多态的实现）
-        peopleArr[0] = new Student("小张",15,"S100");
-        peopleArr[1] = new Teacher("林老师",35,"T200");
-        for (AbstractPeople people:peopleArr) {
-            people.printDetailInfo();//Student和Teacher都实现了printDetailInfo方法
-        }
+
+        Coder coder = new Coder();
+        coder.setJobName("程序员");
+        System.out.println(coder.getJobName() + "每个月薪资为：");
+        System.out.println("基本薪资：" + coder.getBaseSalary() + "元");
+        System.out.println("绩效奖金：" + coder.getOtherSalary() + "元");
+
+        Cto cto = new Cto();
+        cto.setJobName("技术总监");
+        System.out.println(cto.getJobName() + "每个月薪资为：");
+        System.out.println("基本薪资：" + cto.getBaseSalary() + "元");
+        System.out.println("绩效奖金：" + cto.getOtherSalary() + "元");
+
+        /*
+        //模板方法设计模式
+        Coder coder = new Coder();
+        coder.setJobName("程序员");
+        coder.printSalary();
+
+        Cto cto = new Cto();
+        cto.setJobName("技术总监");
+        cto.printSalary();
+        */
+
+
+
     }
 }
